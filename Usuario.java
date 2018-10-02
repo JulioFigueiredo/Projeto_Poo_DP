@@ -14,7 +14,7 @@ public class Usuario {
  }
  public void setApelido(String apelido){
    this.apelido = apelido;
- }
+
 }
  public String getSenha(){
    return this.senha;
@@ -23,3 +23,4 @@ public class Usuario {
    this.senha = senha;
    
  }
+}
