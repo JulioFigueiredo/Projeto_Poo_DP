@@ -5,13 +5,13 @@ public class Docente {
     private String apelido;
     private String email;
     private int matricula;
-    
-    void Visualizar(){
-        System.out.println("Nome: "+this.nome);
-        System.out.println("Apelido: "+this.apelido);
-        System.out.println("Email: "+this.email);
-        System.out.println("Matrícula: "+this.matricula);
+
+    @Override
+    public String toString() {
+        return "Docente{" + "nome= " + this.nome + ", apelido= " + this.apelido + ", email= " + this.email + ", matricula= " + this.matricula + '}';
     }
+    
+    
     public Docente(){
         this.nome = null;
         this.apelido = null;
