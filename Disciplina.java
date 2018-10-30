@@ -7,12 +7,12 @@ public class Disciplina {
     private int periodo;
     private int qtd_creditos;
 
-    void Visualizar(){
-        System.out.println("Descrição:"+this.descricao);
-        System.out.println("Sigla: "+this.sigla);
-        System.out.println("Período: "+this.periodo);
-        System.out.println("Créditos: "+this.qtd_creditos);
+    @Override
+    public String toString() {
+        return "Disciplina{" + "descricao= " + this.descricao + ", sigla= " + this.sigla + ", periodo= " + this.periodo + ", qtd_creditos= " + this.qtd_creditos + '}';
     }
+
+    
     public Disciplina(){
         this.descricao = null;
         this.periodo = 00;
