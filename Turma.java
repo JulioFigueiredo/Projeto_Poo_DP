@@ -1,13 +1,18 @@
 
 package projeto;
 
+
+
 public class Turma {
     private int identificador;
     private double ano_oferta;
     
+    
+    
     public Turma(){
         this.identificador = 00;
         this.ano_oferta = 0000;
+        
     }
     public Turma(int id, double anoOferta){
         this.identificador = id;
@@ -29,10 +34,13 @@ public class Turma {
     public void setAno_oferta(double ano_oferta) {
         this.ano_oferta = ano_oferta;
     }
-    void Visualizar(){
-        System.out.println("id:"+this.identificador);
-        System.out.println("ano da oferta:"+this.ano_oferta);
+
     
+
     
+    @Override
+    public String toString() {
+        return "Turma{" + "identificador= " + this.identificador + ", ano_oferta= " + this.ano_oferta + '}';
     }
+    
 }
