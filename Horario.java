@@ -1,4 +1,3 @@
-
 package projeto;
 
 public class Horario {
@@ -50,6 +49,6 @@ public class Horario {
 
     public void setLaboratorio(String laboratorio) {
         this.laboratorio = laboratorio;
-    }
+}
     
 }
