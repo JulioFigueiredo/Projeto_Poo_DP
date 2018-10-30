@@ -29,8 +29,10 @@ public class Laboratorio {
     public void setCapacidade(int capacidade) {
         this.capacidade = capacidade;
     }
-    void Visualizar(){
-        System.out.println("Descrição: "+this.descricao);
-        System.out.println("capacidade: "+this.capacidade);
+
+    @Override
+    public String toString() {
+        return "Laboratorio{" + "descricao= " + this.descricao + ", capacidade= " + this.capacidade + '}';
     }
+   
 }
