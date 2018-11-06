@@ -1,23 +1,23 @@
 
-package projeto;
 
 import java.util.ArrayList;
 
 public class Curso{
   private String descricao;
-  private int codigo;
+  private String codigo;
   private int duracao;
   private ArrayList<Docente> professor;
   private ArrayList<Turma> turma;
   private ArrayList<Disciplina> disciplina;
+  private ArrayList<Laboratorio> laboratorio;
   
 
   public Curso(){
     this.descricao = null;
-    this.codigo = 0;
+    this.codigo = null;
     this.duracao = 0;
   }
- public Curso(String desc, int codigo, int duracao){
+ public Curso(String desc, String codigo, int duracao){
    this.descricao = desc;
    this.codigo = codigo;
    this.duracao = duracao;
@@ -31,10 +31,10 @@ public class Curso{
  public void setDescricao(String descricao){
    this.descricao = descricao;
  }
- public int getCodigo(){
+ public String getCodigo(){
    return this.codigo;
  }
- public void setCodigo(int codigo){
+ public void setCodigo(String codigo){
    this.codigo = codigo;
  }
  public int getDuracao(int duracao){
@@ -74,7 +74,9 @@ public class Curso{
     public void removeDocente(int d) {
         this.professor.remove(d);
     }
-    
+    public void addLaboratorio(Laboratorio l) {
+        this.laboratorio.add(l);
+    }
     
     public void addDisciplina(Disciplina disc) {
         this.disciplina.add(disc);
@@ -103,4 +105,3 @@ public class Curso{
    
 
 }
-
