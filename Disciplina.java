@@ -1,26 +1,28 @@
 
-package projeto;
 
 public class Disciplina {
-    private String descricao;
+    private String nome;
+	private String descricao;
     private String sigla;
     private int periodo;
     private int qtd_creditos;
 
     @Override
     public String toString() {
-        return "Disciplina{" + "descricao= " + this.descricao + ", sigla= " + this.sigla + ", periodo= " + this.periodo + ", qtd_creditos= " + this.qtd_creditos + '}';
+        return "Disciplina{"+ "nome: "+ this.nome + ",descricao= " + this.descricao + ", sigla= " + this.sigla + ", periodo= " + this.periodo + ", qtd_creditos= " + this.qtd_creditos + '}';
     }
 
     
     public Disciplina(){
-        this.descricao = null;
+        this.nome= null;
+    	this.descricao = null;
         this.periodo = 00;
         this.sigla = null;
         this.qtd_creditos = 00;
     }
-    public Disciplina(String descricao, String sigla, int periodo,int qtdC){
-        this.descricao = descricao;
+    public Disciplina(String nome, String descricao, String sigla, int periodo,int qtdC){
+        this.nome= nome;
+    	this.descricao = descricao;
         this.sigla = sigla;
         this.periodo = periodo;
         this.qtd_creditos = qtdC;
