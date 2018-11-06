@@ -1,111 +1,104 @@
-package projeto;
+import java.util.ArrayList;
 
 public class Fachada {
     private static Fachada instance = null;
     int i;
-  
-    Curso[] cursos = new Curso[30];{
-
-    }
+    private ArrayList<Curso> cursos;
+    private ArrayList<Disciplina> disciplinas;
+    private ArrayList<Docente> profs;
+    private ArrayList<Laboratorio> laboratorios;
+    private ArrayList<GradeDeHorarios> grade;
+    private ArrayList<Horario> horario;
     
+    private Fachada (){
+    	this.cursos= new ArrayList<Curso>();
+    	this.disciplinas=new ArrayList<Disciplina>();
+    	this.profs = new ArrayList<Docente>();
+    	this.laboratorios= new ArrayList<Laboratorio>();
+    	this.horario= new ArrayList<Horario>();
+    	this.grade= new ArrayList<GradeDeHorarios>();
+    }
     public void addCurso( String descricao, String codigo, int duracao) {
-        for (i = 0; i< 30; i++){
-            cursos= new Curso[0];
-    }
-    }
-    
-    public String listarCursos(){
-        String [] curso = {"Descrição", "Código", " Duração"};
-        String print = "";
-        
-         for (int c = 0; c < 3; c++){
-            print += cursos[c] + "\n";
-            for (int l = 0; l < 30; l++){
-                print +=  cursos[l][c] + " ";
-            }
-            print += "\n";
-        }
-         return print;
+      Curso c = new Curso(descricao, codigo, duracao);
+      cursos.add(c);
     }
     
-    
-        
-    
+    public void listarCursos(){
+       for (Curso c : cursos){
+    	   System.out.println(c.toString());
+       }
+    }
     
     public void addDisciplina(String nomeDisciplina, String descricao, String sigla, int periodo, int quantCredito){
-        
-    }
-    
-    public void listarDisciplinas(String d){
-       
-    }
-    
-    Docente [] docentes = new Docente[30]; {
-
-    }
-    
-    public void addDocente(String nome, String apelido, String email, String matricula, String areaLotacao, String vinculo){
-    
-    }
-    
-    public String listarDocentes(String doc){
-        String [] dcnt = {"Nome", "Apelido", "E-mail", "Matrícula", "Área de Lotação", "Vínculo" };
-        
-            for (int c = 0; c < 30; c++){
-            doc += dcnt[c] + "\n";
-            doc += "\n";
+        Disciplina d = new Disciplina(nomeDisciplina, descricao, sigla, periodo,quantCredito);
+        for ( Curso c: cursos){
+        	if (c.getDescricao()== descricao){
+        		c.addDisciplina(d);
+        	}
         }
-         return doc;
     }
     
-    Laboratorio [] laboratorios = new  Laboratorio[10];{
-
-}
-     public void addLaboratorio(String descricao, int capacidade){
-     
+    public void listarDisciplinas(String j){
+    	for (Disciplina c: disciplinas){
+     	   System.out.println(c.toString());
+        }
+    }
+   
+    public void addDocente(String nome, String apelido, String email, String matricula, String areaLotacao, String vinculo){
+    	Docente p = new Docente(nome, apelido, email, matricula, areaLotacao,vinculo);
+    	for (Curso c: cursos){
+    		if(c.getDescricao()== nome){
+    			c.addDocente(p);
+    		}
+    	}
+    }
+    
+    public void listarDocentes(String c){
+    	for (Docente p : profs){
+     	   System.out.println(p.toString());
+        }
+    }
+    
+  
+    public void addLaboratorio(String descricao, int capacidade){
+    	Laboratorio l= new Laboratorio(descricao,capacidade);
+    	for (Curso c: cursos){
+    		if(c.getDescricao()== descricao){
+    			c.addLaboratorio(l);
+    		}
+    	}
+    	
+    	
     }
      
-    public String listarLaboratorios(String lab){
-        String [] labo = {"Descrição", "Capacidade"};
-        
-         for (int c = 0; c < 10; c++){
-            lab += labo[c] + "\n";
-            }
-            lab += "\n";
-        
-         return lab;
+    public void listarLaboratorios(String c){
+    	for (Laboratorio l : laboratorios){
+    		System.out.println(l.toString());
+    		}
     }
      
     
-    public void listarTudo(){
+    public void listarTudo(String a){
+    	for (Curso c: cursos){
+    		if(c.getDescricao()==a){
+    			c.toString();
+    		}
+    	}
         
       }
     
-     GradeDeHorarios[][] g = new GradeDeHorarios[6][5];
-       
-     public String criarGrade(String grade){
-        grade += g;
-        return grade;
-        }
    
-    public void addHorario(){
+    public void addHorario(String descricao, int aula, String prof, String disc, String lab ){
+        Horario h= new Horario(descricao, aula, prof, disc, lab);
         
     }
     
     
-    public String verGrade(String v){
-        String [] diaSemana = {"Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira"};
+    public void verGrade(String g){
         
-        for (int c = 0; c < 5 ; c++) {
-            v += diaSemana[c] + "\n";
-            for (int l = 0; l < 6 ; l++) {
-                v += g[l][c] + " ";
-            }
-            v += "\n";
+    	this.grade.toString();
         }
-        return v;
-    }
-    
+  
     
     
     
@@ -116,5 +109,10 @@ public class Fachada {
         return instance;
     }
 
+   public void criarGrade(String g) {
+	GradeDeHorarios [][] grade = new GradeDeHorarios[7][7];
+	g= g +" " + grade;
+   }
+
     
-}   
+}
