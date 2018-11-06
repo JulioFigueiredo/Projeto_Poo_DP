@@ -1,6 +1,4 @@
 
-package projeto;
-
 public class Laboratorio {
     private String descricao;
     private int capacidade;
