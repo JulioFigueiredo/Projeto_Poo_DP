@@ -1,24 +1,32 @@
-package projeto;
 
 public class Horario {
+    private String desc; 
+    private int aula;
     private String disc;
     private String prof;
     private String laboratorio;
-    private int aula;
+    
     
     public Horario(){
-        this.disc= null;
+        this.desc= null;
+    	this.disc= null;
         this.prof= null;
         this.laboratorio= null;  
         this.aula= 0;
     }
-    public Horario(String dis, String prof, String lab, int aula){
-        this.disc= dis;
+    public Horario(String desc,  int aula, String dis, String prof, String lab){
+        this.desc= desc;
+    	this.disc= dis;
         this.prof= prof;
         this.laboratorio=lab;
         this.aula=aula;
     }
-
+    public String getDesc(){
+    	return this.desc;
+    }
+    public void setDesc(String desc){
+    	this.desc= desc;
+    }
     public int getAula() {
         return this.aula;
     }
